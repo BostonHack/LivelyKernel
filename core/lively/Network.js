@@ -1441,6 +1441,11 @@ Object.subclass('WebResource',
         request.del(this.getURL());
         return this;
     },
+    delete: function() {
+        // I am only a convenience method
+        return this.del.apply(this, $A(arguments));
+    },
+
 
     post: function(content, contentType) {
         this.content = content;
